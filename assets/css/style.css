@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap');
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: whitesmoke;
+}
+
+.modal-title b {
+    color: red;
+}
