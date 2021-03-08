@@ -9,8 +9,8 @@ if (!isset($_SESSION['username'])) {
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#example').DataTable();
-    });
+        $('#example').DataTable()
+    })
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -80,16 +80,31 @@ if (!isset($_SESSION['username'])) {
         showGraphWorkType()
         showGraphEmpType()
         showGraphDept()
-    });
-
+    })
+    const color = [
+        'rgba(255, 99, 132, 0.8)',
+        'rgba(54, 162, 235, 0.8)',
+        'rgba(255, 206, 86, 0.8)',
+        'rgba(75, 192, 192, 0.8)',
+        'rgba(153, 102, 255, 0.8)',
+        'rgba(255, 159, 64, 0.8)'
+    ]
+    const borderColor = [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+    ]
 
     function showGraphWorkType() {
         {
             $.post("graph_work_type.php",
                 function(data) {
-                    console.log(data);
-                    let name = [];
-                    let marks = [];
+                    console.log(data)
+                    let name = []
+                    let marks = []
 
                     for (let i in data) {
                         name.push(data[i].work_type_name);
@@ -100,22 +115,8 @@ if (!isset($_SESSION['username'])) {
                         labels: name,
                         datasets: [{
                             label: 'ประเภทงาน',
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
+                            backgroundColor: color,
+                            borderColor: borderColor,
                             hoverBackgroundColor: '#CCCCCC',
                             hoverBorderColor: '#666666',
                             data: marks
@@ -136,8 +137,8 @@ if (!isset($_SESSION['username'])) {
                                 }]
                             }
                         }
-                    });
-                });
+                    })
+                })
         }
     }
 
@@ -145,42 +146,28 @@ if (!isset($_SESSION['username'])) {
         {
             $.post("graph_emp_type.php",
                 function(data) {
-                    console.log(data);
-                    let name = [];
-                    let marks = [];
+                    console.log(data)
+                    let name = []
+                    let marks = []
 
                     for (let i in data) {
-                        name.push(data[i].emp_type);
-                        marks.push(data[i].count_work);
+                        name.push(data[i].emp_type)
+                        marks.push(data[i].count_work)
                     }
 
                     let chartdata = {
                         labels: name,
                         datasets: [{
                             label: 'ประเภทพนักงาน',
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
+                            backgroundColor: color,
+                            borderColor: borderColor,
                             hoverBackgroundColor: '#CCCCCC',
                             hoverBorderColor: '#666666',
                             data: marks
                         }]
-                    };
+                    }
 
-                    let graphTarget = $("#graphEmpType");
+                    let graphTarget = $("#graphEmpType")
 
                     let barGraph = new Chart(graphTarget, {
                         type: 'bar',
@@ -194,8 +181,8 @@ if (!isset($_SESSION['username'])) {
                                 }]
                             }
                         }
-                    });
-                });
+                    })
+                })
         }
     }
 
@@ -203,42 +190,28 @@ if (!isset($_SESSION['username'])) {
         {
             $.post("graph_dept.php",
                 function(data) {
-                    console.log(data);
-                    let name = [];
-                    let marks = [];
+                    console.log(data)
+                    let name = []
+                    let marks = []
 
                     for (let i in data) {
-                        name.push(data[i].dept_name);
-                        marks.push(data[i].count_dept);
+                        name.push(data[i].dept_name)
+                        marks.push(data[i].count_dept)
                     }
 
                     let chartdata = {
                         labels: name,
                         datasets: [{
                             label: 'ประเภทพนักงาน',
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
+                            backgroundColor: color,
+                            borderColor: borderColor,
                             hoverBackgroundColor: '#CCCCCC',
                             hoverBorderColor: '#666666',
                             data: marks
                         }]
                     };
 
-                    let graphTarget = $("#graphDept");
+                    let graphTarget = $("#graphDept")
 
                     let barGraph = new Chart(graphTarget, {
                         type: 'doughnut',
@@ -252,8 +225,8 @@ if (!isset($_SESSION['username'])) {
                                 }]
                             }
                         }
-                    });
-                });
+                    })
+                })
         }
     }
 </script>

@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<div class="container" style="margin-top: 10%;">
+<div class="container" style="margin-top: 5%;">
     <div class="row">
         <div class="col-md-3 col-sm-1"></div>
         <div class="col-md-6 col-sm-1">
