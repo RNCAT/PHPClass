@@ -24,7 +24,7 @@
             </ul>
             <form class="d-flex">
                 <a class="nav-link" style="color: white;">ชื่อผู้ใช้ : <?php echo $_SESSION['username'] ?></a>
-                <a href="logout.php" class="btn btn-danger">ออกจากระบบ</a>
+                <a href="../logout.php" class="btn btn-danger">ออกจากระบบ</a>
             </form>
         </div>
     </div>
