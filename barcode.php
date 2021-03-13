@@ -17,9 +17,6 @@ for ($i = 0; $i < $round; $i++) {
         echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($emp_id, $generator::TYPE_CODE_128)) . '">&emsp;&ensp;';
     }
     echo "<br>";
-    if ($i == 16) {
-        echo "<h3 style='text-align: center'>emp_id : " . $emp_id . "<h3>";
-    }
 }
 ?>
 
