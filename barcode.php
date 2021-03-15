@@ -1,23 +1,31 @@
 <?php
 session_start();
 require './vendor/autoload.php';
-$generator = new Picqer\Barcode\BarcodeGeneratorPNG();
+
+use Dompdf\Dompdf;
+
+$generator = new Picqer\Barcode\BarcodeGeneratorHTML();
+$dompdf = new Dompdf();
+
 
 $emp_id = $_POST['emp_id'];
-if ($_POST['round'] == null) {
-    $round = 1;
+$emp_name = $_POST['emp_name'];
+if ($_POST['row'] == null) {
+    $row = 1;
 } else {
-    $round = $_POST['round'];
+    $row = $_POST['row'];
 }
 
-echo "<h3 style='text-align: center'>emp_id : " . $emp_id . "<h3>";
-
-for ($i = 0; $i < $round; $i++) {
-    for ($j = 0; $j < 5; $j++) {
-        echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($emp_id, $generator::TYPE_CODE_128)) . '">&emsp;&ensp;';
-    }
-    echo "<br>";
+for ($i = 0; $i < $row; $i++) {
+    $html .= $generator->getBarcode('081231723897', $generator::TYPE_CODE_128, 3, 40) . '<p style="text-align: center;">' . $emp_id . '&ensp;' . $emp_name . '</p>';
 }
+
+
+$dompdf->loadHtml(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+$dompdf->setPaper([0, 0, 300, 150], 'portrait');
+$dompdf->render();
+$dompdf->stream();
+
 ?>
 
 <script>

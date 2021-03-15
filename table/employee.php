@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
                                 <th scope="col">ประเภทงาน</th>
                                 <th scope="col">ประเภทพนักงาน</th>
                                 <th scope="col"></th>
-                                <th scope="col">บาร์โค้ด</th>
+                                <th scope="col">พิมพ์บาร์โค้ด</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,8 +88,9 @@ if (isset($_POST["submit"])) {
                                     <td>
                                         <form class="row g-2" action="../barcode.php" method="post">
                                             <input type="text" name="emp_id" value="<?php echo $employee->emp_id ?>" hidden>
+                                            <input type="text" name="emp_name" value="<?php echo $employee->emp_name ?>" hidden>
                                             <div class="col-auto">
-                                                <input class="form-control" type="number" name="round" min="5" step="5" size="10" placeholder="จำนวนแถว">
+                                                <input class="form-control" type="number" name="row" min="1" size="10" placeholder="จำนวนแผ่น">
                                             </div>
                                             <div class="col-auto">
                                                 <input type="submit" name="submit" class="btn btn-info" value="พิมพ์" style="display: inline">
