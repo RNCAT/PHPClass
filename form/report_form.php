@@ -120,7 +120,10 @@ $employee = $stmt->fetchAll(PDO::FETCH_OBJ);
         ],
     ]);
     $html = ob_get_contents();
+
+    ob_end_flush();
+    ob_clean();
     $mpdf->WriteHTML($html);
+    $mpdf->debug = true;
     $mpdf->Output();
-    ob_end_flush()
     ?>
