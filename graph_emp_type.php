@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-    header('Location: index.php');
-}
+// if (!isset($_SESSION['username'])) {
+//     header('Location: index.php');
+// }
 header('Content-Type: application/json');
 include_once './classes/user.php';
 $objUser1 = new User();
