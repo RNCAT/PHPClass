@@ -28,6 +28,9 @@ if (isset($_POST["submit"])) {
         <div class="col-md-10 col-sm-1">
             <div class="card">
                 <h2 style="text-align: center; margin: 20px;">พนักงาน</h2>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="../form/report_form.php" class="btn btn-success me-md-4">พิมพ์รายงาน</a>
+                </div>
                 <div class="card-body">
                     <table class="display" id="employee" style="width:100%">
                         <thead>
