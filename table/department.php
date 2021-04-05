@@ -42,8 +42,8 @@ if (isset($_POST["submit"])) {
                                     <td><?php echo $department->dept_name ?></td>
                                     <td>
                                         <form method="post" action="../form/dept_edit_form.php" style="display: inline">
-                                            <input type="text" id="dept_id" name="dept_id" value="<?php echo $department->dept_id ?>" hidden>
-                                            <input type="text" id="dept_name" name="dept_name" value="<?php echo $department->dept_name ?>" hidden>
+                                            <input type="text" name="dept_id" value="<?php echo $department->dept_id ?>" hidden>
+                                            <input type="text" name="dept_name" value="<?php echo $department->dept_name ?>" hidden>
                                             <input type="submit" name="submit" class="btn btn-warning" value="แก้ไข">
 
                                         </form>

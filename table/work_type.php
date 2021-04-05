@@ -41,8 +41,8 @@ if (isset($_POST["submit"])) {
                                     <td><?php echo $work_type->work_type_name ?></td>
                                     <td>
                                         <form method="post" action="../form/work_type_edit_form.php" style="display: inline">
-                                            <input type="text" id="work_type_id" name="work_type_id" value="<?php echo $work_type->work_type_id ?>" hidden>
-                                            <input type="text" id="work_type_name" name="work_type_name" value="<?php echo $work_type->work_type_name ?>" hidden>
+                                            <input type="text" name="work_type_id" value="<?php echo $work_type->work_type_id ?>" hidden>
+                                            <input type="text" name="work_type_name" value="<?php echo $work_type->work_type_name ?>" hidden>
                                             <input type="submit" name="submit" class="btn btn-warning" value="แก้ไข">
                                         </form>
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delWorkType<?php echo $work_type->work_type_id ?>">ลบ</button>
@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
                                             </div>
                                             <div class="modal-footer">
                                                 <form method="post" action="" style="display: inline">
-                                                    <input type="text" id="work_type_id" name="work_type_id" value="<?php echo $work_type->work_type_id ?>" hidden>
+                                                    <input type="text" name="work_type_id" value="<?php echo $work_type->work_type_id ?>" hidden>
                                                     <input type="submit" name="submit" class="btn btn-danger" value="ลบ">
                                                 </form>
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>

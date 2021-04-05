@@ -61,11 +61,11 @@ if (isset($_POST["submit"])) {
                                     <td>
                                         <form method="post" action="../form/emp_edit_form.php" style="display: inline">
                                             <input type="text" name="emp_id" value="<?php echo $employee->emp_id ?>" hidden>
-                                            <input type="text" id="emp_name" name="emp_name" value="<?php echo $employee->emp_name ?>" hidden>
-                                            <input type="text" id="gender" name="gender" value="<?php echo $employee->gender ?>" hidden>
-                                            <input type="text" id="dept_id" name="dept_id" value="<?php echo $employee->dept_id ?>" hidden>
-                                            <input type="text" id="work_type_id" name="work_type_id" value="<?php echo $employee->work_type_id ?>" hidden>
-                                            <input type="text" id="emp_type_id" name="emp_type_id" value="<?php echo $employee->emp_type_id ?>" hidden>
+                                            <input type="text" name="emp_name" value="<?php echo $employee->emp_name ?>" hidden>
+                                            <input type="text" name="gender" value="<?php echo $employee->gender ?>" hidden>
+                                            <input type="text" name="dept_id" value="<?php echo $employee->dept_id ?>" hidden>
+                                            <input type="text" name="work_type_id" value="<?php echo $employee->work_type_id ?>" hidden>
+                                            <input type="text" name="emp_type_id" value="<?php echo $employee->emp_type_id ?>" hidden>
                                             <input type="submit" name="submit" class="btn btn-warning" value="แก้ไข">
                                         </form>
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delEmp<?php echo $employee->emp_id ?>">ลบ</button>
